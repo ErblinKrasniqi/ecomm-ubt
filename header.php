@@ -9,18 +9,18 @@
             <a href="./index.php" class="logo">Ecommerce</a>
             <?php
             if(isset($_SESSION["useruid"])){
-                echo " <a href='./profile.php'>Profile page</a>";
-                echo "<a href='./includes/logout.inc.php'>logout</a>";
+                echo " <a class='logo' href='./profile.php'>Profile page</a>";
+                echo "<a class='logo' href='./includes/logout.inc.php'>logout</a>";
                 
             } else {
-                echo " <a href='./login.php'>Log in</a>";
-                echo "<a href='./signup.php'>Sign up</a>";
+                echo " <a class='logo' href='./login.php'>Log in</a>";
+                echo "<a class='logo' href='./signup.php'>Sign up</a>";
                 
             }
             
             ?>
             
-            <a href='./admin.php'>Log admin</a>
+            <a class='logo' href='./admin.php'>Log admin</a>
             <!-- Cart-Icon -->
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <!-- Cart -->
