@@ -19,7 +19,7 @@
     <title>User Table</title>
 
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/admin.css">
     <style>
 
 
