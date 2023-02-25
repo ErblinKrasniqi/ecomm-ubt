@@ -20,7 +20,7 @@
             
             ?>
             
-            
+            <a href='./admin.php'>Log admin</a>
             <!-- Cart-Icon -->
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <!-- Cart -->
