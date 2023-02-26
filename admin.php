@@ -152,7 +152,7 @@ if (isset($_POST['submit'])) {
       echo "<div class='comments'>";
       echo "<h3>" . $row["name"] . " <small>(" . $row["email"] . ")</small></h3>";
       echo "<p>" . $row["comment"] . "</p>";
-      echo "</div'>";
+      echo "<div'>";
     }
   } else {
     echo "<p>No comments yet.</p>";
