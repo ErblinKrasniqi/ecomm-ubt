@@ -9,21 +9,27 @@
             <a href="./index.php" class="logo">Ecommerce</a>
             <?php
 if (isset($_SESSION["is_admin"])) {
-    echo "<a class='logo' href='./admin.php'>Admin page</a>";
+    echo "<a class='logo' href='./admin.php'>Dashboard</a>";
 } 
 
 if (isset($_SESSION["useruid"])) {
     echo "<a class='logo' href='./profile.php'>Profile page</a>";
     echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
+
 } else {
+    echo "<a class='logo' href='./aboutUs.php'>About us</a>";
+    echo "<a class='logo' href='#'>Contacts</a>";
+    echo "<a class='logo' href='#'>News</a>";
+    echo "<a class='logo' href='./login.php.php'>Profile</a>";
     echo "<a class='logo' href='./login.php'>Log in</a>";
     echo "<a class='logo' href='./signup.php'>Sign up</a>";
+    
 }
 
             
             ?>
             
-            <a class='logo' href='./aboutUs.php'>About us</a>
+            
             <!-- Cart-Icon -->
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <!-- Cart -->
