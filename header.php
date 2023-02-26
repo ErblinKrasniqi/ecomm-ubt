@@ -8,6 +8,10 @@
         <div class="nav container">
             <a href="./index.php" class="logo">Ecommerce</a>
             <?php
+            if(isset($_SESSION["is_admin"])){
+                echo "<a class='logo' href='./admin.php'>Admin page</a>";
+                echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
+            }
 if (isset($_SESSION["useruid"])) {
     echo "<a class='logo' href='./profile.php'>Profile page</a>";
     echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
