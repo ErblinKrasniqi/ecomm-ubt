@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST["submit"])) {
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
@@ -32,6 +31,10 @@ if (isset($_POST["submit"])) {
         } else if ($pwdCheck === true) {
             // Check if the user is an admin
             if ($row["is_admin"] === 1) {
+                session_start();
+                $_SESSION["userid"] = $row["usersId"];
+                $_SESSION["useruid"] = $row["usersUid"];
+                $_SESSION["is_admin"] = true;
                 header('Location: ../admin.php');
                 exit();
             } else {

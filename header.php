@@ -8,15 +8,14 @@
         <div class="nav container">
             <a href="./index.php" class="logo">Ecommerce</a>
             <?php
-            if(isset($_SESSION["useruid"])){
-                echo " <a class='logo' href='./profile.php'>Profile page</a>";
-                echo "<a class='logo' href='./includes/logout.inc.php'>logout</a>";
-                
-            } else {
-                echo " <a class='logo' href='./login.php'>Log in</a>";
-                echo "<a class='logo' href='./signup.php'>Sign up</a>";
-                
-            }
+if (isset($_SESSION["useruid"])) {
+    echo "<a class='logo' href='./profile.php'>Profile page</a>";
+    echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
+} else {
+    echo "<a class='logo' href='./login.php'>Log in</a>";
+    echo "<a class='logo' href='./signup.php'>Sign up</a>";
+}
+
             
             ?>
             
