@@ -15,7 +15,7 @@ if (isset($_SESSION["is_admin"])) {
 if (isset($_SESSION["useruid"])) {
     echo "<a class='logo' href='./aboutUs.php'>About us</a>";
     echo "<a class='logo' href='news.php'>News</a>";
-    echo "<a class='logo' href='./comments.php'>Comments</a>";
+    echo "<a class='logo' href='./comments.php'>Contact</a>";
     echo "<a class='logo' href='./profile.php'>Profile</a>";
     echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
     
@@ -24,7 +24,7 @@ if (isset($_SESSION["useruid"])) {
 } else {
     echo "<a class='logo' href='./aboutUs.php'>About us</a>";
     echo "<a class='logo' href='news.php'>News</a>";
-    echo "<a class='logo' href='./comments.php'>Comments</a>";
+    echo "<a class='logo' href='./comments.php'>Contact</a>";
     echo "<a class='logo' href='./login.php'>Profile</a>";
     echo "<a class='logo' href='./login.php'>Log in</a>";
     echo "<a class='logo' href='./signup.php'>Sign up</a>";

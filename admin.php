@@ -129,5 +129,24 @@ if (isset($_POST['submit'])) {
   <input type="submit" name="submit" value="Submit">
 </form>
 
+<h2>Comments</h2>
+  <?php
+   include_once './includes/dbh.inc.php';
+
+   $sql = "SELECT * FROM comments";
+   $result = mysqli_query($conn, $sql);
+
+
+  // Display the comments on the web page
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+      echo "<h3>" . $row["name"] . " <small>(" . $row["email"] . ")</small></h3>";
+      echo "<p>" . $row["comment"] . "</p>";
+    }
+  } else {
+    echo "<p>No comments yet.</p>";
+  }
+  ?>
+
 </body>
 </html>

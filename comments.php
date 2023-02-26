@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql);
     include_once("header.php");
 
     ?>
-  <h1>Leave a comment</h1>
+  <h1>Conntact</h1>
   <form method="post">
     <label for="name">Name:</label>
     <input type="text" name="name" required><br>
@@ -47,18 +47,7 @@ $result = mysqli_query($conn, $sql);
     <input type="submit" name="submit" value="Submit">
   </form>
 
-  <h2>Comments</h2>
-  <?php
-  // Display the comments on the web page
-  if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-      echo "<h3>" . $row["name"] . " <small>(" . $row["email"] . ")</small></h3>";
-      echo "<p>" . $row["comment"] . "</p>";
-    }
-  } else {
-    echo "<p>No comments yet.</p>";
-  }
-  ?>
+
 
 </body>
 </html>
