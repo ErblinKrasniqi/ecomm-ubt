@@ -1,4 +1,6 @@
 <?php
+
+
 include_once("header.php");
 include_once("./includes/dbh.inc.php");
 
@@ -43,6 +45,9 @@ if (isset($_POST["update-name"])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="css/style.css">
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
