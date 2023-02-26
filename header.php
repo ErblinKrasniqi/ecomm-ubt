@@ -18,7 +18,7 @@ if (isset($_SESSION["useruid"])) {
 
 } else {
     echo "<a class='logo' href='./aboutUs.php'>About us</a>";
-    echo "<a class='logo' href='#'>Contacts</a>";
+    echo "<a class='logo' href='contacts.php'>Contacts</a>";
     echo "<a class='logo' href='./comments.php'>Comments</a>";
     echo "<a class='logo' href='./login.php'>Profile</a>";
     echo "<a class='logo' href='./login.php'>Log in</a>";
