@@ -8,12 +8,6 @@
         <div class="nav container2">
             <a href="./index.php" class="logo">Ecommerce</a>
             <?php
-<<<<<<< Updated upstream
-=======
-            if(isset($_SESSION["is_admin"])){
-                echo "<a class='logo' href='./admin.php'>Admin page</a>";
-            }
->>>>>>> Stashed changes
 if (isset($_SESSION["useruid"])) {
     echo "<a class='logo' href='./profile.php'>Profile page</a>";
     echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
