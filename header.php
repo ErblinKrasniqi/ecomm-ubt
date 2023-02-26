@@ -20,7 +20,7 @@
             
             ?>
             
-            <a class='logo' href='./admin.php'>Log admin</a>
+            <a class='logo' href='./aboutUs.php'>About us</a>
             <!-- Cart-Icon -->
             <i class='bx bx-shopping-bag' id="cart-icon"></i>
             <!-- Cart -->
