@@ -59,6 +59,20 @@
 </head>
 <body>
 <?php
+include_once './includes/dbh.inc.php';
+
+if(isset($_POST['submit'])) {
+  $name = mysqli_real_escape_string($conn, $_POST['name']);
+  $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
+  $price = mysqli_real_escape_string($conn, $_POST['price']);
+
+  $sql = "INSERT INTO products (name, quantity, price) VALUES ('$name', '$quantity', '$price')";
+  mysqli_query($conn, $sql);
+  header("Location: index.php");
+  exit();
+}
+?>
+<?php
     include_once("header.php");
 
     ?>
@@ -92,10 +106,25 @@
                         echo "</tr>";
                     }
                 }
+
+
             ?>
+
+            
+
+
             
         </tbody>
     </table>
-
+    <h2>Add Product</h2>
+  <form method="post" action="">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" name="quantity"><br><br>
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price"><br><br>
+    <input type="submit" name="submit" value="Submit">
+  </form>
 </body>
 </html>
