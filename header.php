@@ -20,7 +20,7 @@ if (isset($_SESSION["useruid"])) {
     echo "<a class='logo' href='./aboutUs.php'>About us</a>";
     echo "<a class='logo' href='#'>Contacts</a>";
     echo "<a class='logo' href='#'>News</a>";
-    echo "<a class='logo' href='./login.php.php'>Profile</a>";
+    echo "<a class='logo' href='./login.php'>Profile</a>";
     echo "<a class='logo' href='./login.php'>Log in</a>";
     echo "<a class='logo' href='./signup.php'>Sign up</a>";
     
