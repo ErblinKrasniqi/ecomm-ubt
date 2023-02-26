@@ -127,7 +127,7 @@ if (isset($_POST['submit'])) {
         </tbody>
     </table>
     <h2>Add Product</h2>
-<form method="post" action="" enctype="multipart/form-data">
+<form class='add-product-form' method="post" action="" enctype="multipart/form-data">
   <label for="name">Product Name:</label>
   <input type="text" id="name" name="name"><br><br>
   <label for="price">Price:</label>
@@ -137,7 +137,7 @@ if (isset($_POST['submit'])) {
   <input type="submit" name="submit" value="Submit">
 </form>
 
-<h2>Contacts Section</h2>
+<h2 class="comments">Contacts Section</h2>
   <?php
    include_once './includes/dbh.inc.php';
 
@@ -148,13 +148,18 @@ if (isset($_POST['submit'])) {
   // Display the comments on the web page
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
+
+      echo "<div class='comments'>";
       echo "<h3>" . $row["name"] . " <small>(" . $row["email"] . ")</small></h3>";
       echo "<p>" . $row["comment"] . "</p>";
+      echo "</div'>";
     }
   } else {
     echo "<p>No comments yet.</p>";
   }
   ?>
+
+  
 
 </body>
 </html>

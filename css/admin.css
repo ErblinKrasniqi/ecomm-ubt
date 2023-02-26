@@ -102,3 +102,8 @@ form input[type="submit"]:hover {
   font-size: 14px;
   line-height: 1.5;
 }
+
+form,
+table {
+  margin: 0 auto;
+}
