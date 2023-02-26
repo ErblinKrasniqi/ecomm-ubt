@@ -34,6 +34,14 @@
     </style>
 </head>
 <body>
+
+<style>
+
+  
+</style>
+
+
+
 <?php
 include_once './includes/dbh.inc.php';
 
@@ -129,7 +137,7 @@ if (isset($_POST['submit'])) {
   <input type="submit" name="submit" value="Submit">
 </form>
 
-<h2>Comments</h2>
+<h2>Contacts Section</h2>
   <?php
    include_once './includes/dbh.inc.php';
 
