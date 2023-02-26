@@ -34,7 +34,7 @@
     if(mysqli_num_rows($result) > 0) {
       while($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-box">';
-        echo '<img src="img/product1.jpg" alt="" class="product-img">';
+        echo "<img src='$row[image_path]' alt='' class='product-img'>";
         echo '<h2 class="product-title">' . $row['name'] . '</h2>';
         echo '<span class="price">$' . $row['price'] . '</span>';
         echo '<i class="bx bx-shopping-bag add-cart"></i>';
