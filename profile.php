@@ -53,7 +53,7 @@ if (isset($_POST["update-name"])) {
     <title>Profile</title>
     <style>
         /* Style for the container */
-        .container {
+        .container1 {
             max-width: 500px;
             margin: 0 auto;
             text-align: center;
@@ -63,6 +63,7 @@ if (isset($_POST["update-name"])) {
     /* Style for the heading */
     h1 {
         font-size: 2rem;
+        margin-top: 20px;
         margin-bottom: 30px;
     }
 
@@ -97,7 +98,7 @@ if (isset($_POST["update-name"])) {
 </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container1">
         <h1>Profile</h1>
         <p>Welcome, <?php echo $row["usersName"]; ?></p>
         <form action="profile.php" method="post">
