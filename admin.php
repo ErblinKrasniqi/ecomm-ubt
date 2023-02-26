@@ -61,17 +61,44 @@
 <?php
 include_once './includes/dbh.inc.php';
 
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
   $name = mysqli_real_escape_string($conn, $_POST['name']);
   $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
   $price = mysqli_real_escape_string($conn, $_POST['price']);
 
-  $sql = "INSERT INTO products (name, quantity, price) VALUES ('$name', '$quantity', '$price')";
+  // Handle image upload
+  $targetDir = "uploads/";
+  $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+  $imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
+  $uploadOk = 1;
+  if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if($check !== false) {
+      $uploadOk = 1;
+    } else {
+      echo "File is not an image.";
+      $uploadOk = 0;
+    }
+  }
+  if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+  } else {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+      $imagePath = $targetFile;
+    } else {
+      echo "Sorry, there was an error uploading your file.";
+    }
+  }
+
+  // Store product information and image path in database
+  $sql = "INSERT INTO products (name, quantity, price, image_path) VALUES ('$name', '$quantity', '$price', '$imagePath')";
   mysqli_query($conn, $sql);
-  header("Location: index.php");
-  exit();
+
+
+
 }
 ?>
+
 <?php
     include_once("header.php");
 
@@ -117,14 +144,17 @@ if(isset($_POST['submit'])) {
         </tbody>
     </table>
     <h2>Add Product</h2>
-  <form method="post" action="">
-    <label for="name">Product Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="quantity">Quantity:</label>
-    <input type="text" id="quantity" name="quantity"><br><br>
-    <label for="price">Price:</label>
-    <input type="text" id="price" name="price"><br><br>
-    <input type="submit" name="submit" value="Submit">
-  </form>
+<form method="post" action="" enctype="multipart/form-data">
+  <label for="name">Product Name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="quantity">Quantity:</label>
+  <input type="text" id="quantity" name="quantity"><br><br>
+  <label for="price">Price:</label>
+  <input type="text" id="price" name="price"><br><br>
+  <label for="image">Image:</label>
+  <input type="file" id="image" name="image"><br><br>
+  <input type="submit" name="submit" value="Submit">
+</form>
+
 </body>
 </html>
