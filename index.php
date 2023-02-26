@@ -40,8 +40,6 @@
         echo '<i class="bx bx-shopping-bag add-cart"></i>';
         echo '</div>';
       }
-    } else {
-      echo '<p>No products found.</p>';
     }
 
     ?>
