@@ -29,32 +29,8 @@
             margin-top: 200px;
         }
 
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
 
-        th {
-            background-color: #ddd;
-            font-weight: bold;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .delete-button {
-            background-color: #f44336;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .delete-button:hover {
-            background-color: #d6372a;
-        }
+   
     </style>
 </head>
 <body>
@@ -63,7 +39,6 @@ include_once './includes/dbh.inc.php';
 
 if (isset($_POST['submit'])) {
   $name = mysqli_real_escape_string($conn, $_POST['name']);
-  $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
   $price = mysqli_real_escape_string($conn, $_POST['price']);
 
   // Handle image upload
@@ -91,7 +66,7 @@ if (isset($_POST['submit'])) {
   }
 
   // Store product information and image path in database
-  $sql = "INSERT INTO products (name, quantity, price, image_path) VALUES ('$name', '$quantity', '$price', '$imagePath')";
+  $sql = "INSERT INTO products (name, price, image_path) VALUES ('$name', '$price', '$imagePath')";
   mysqli_query($conn, $sql);
 
 
@@ -147,8 +122,6 @@ if (isset($_POST['submit'])) {
 <form method="post" action="" enctype="multipart/form-data">
   <label for="name">Product Name:</label>
   <input type="text" id="name" name="name"><br><br>
-  <label for="quantity">Quantity:</label>
-  <input type="text" id="quantity" name="quantity"><br><br>
   <label for="price">Price:</label>
   <input type="text" id="price" name="price"><br><br>
   <label for="image">Image:</label>

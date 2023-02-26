@@ -33,3 +33,9 @@ tr:nth-child(even) {
 .delete-button:hover {
   background-color: #d6372a;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 200px;
+}
