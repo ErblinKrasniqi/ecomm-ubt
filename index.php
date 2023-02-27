@@ -5,44 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Website - Shopping Cart</title>
-    <!-- Link To CSS -->
+
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="css/style.css">
+
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-
-
-
 </head>
 <body>
-    <?php
-    include_once("header.php");
 
+    <?php
+        // Include the header file
+        include_once("header.php");
     ?>
-    <!-- Shop -->
+
+    <!-- Shop section -->
     <section class="shop container">
         <h2 class="section-title">Shop Watches</h2>
-        <!-- Content -->
+
+        <!-- Shop content -->
         <div class="shop-content">
-            <!-- Box 1 -->
+
             <?php
-    include_once './includes/dbh.inc.php';
+                // Include the database connection file
+                include_once './includes/dbh.inc.php';
 
-    $sql = "SELECT * FROM products";
-    $result = mysqli_query($conn, $sql);
+                // Select all products from the database
+                $sql = "SELECT * FROM products";
+                $result = mysqli_query($conn, $sql);
 
-    if(mysqli_num_rows($result) > 0) {
-      while($row = mysqli_fetch_assoc($result)) {
-        echo '<div class="product-box">';
-        echo "<img src='$row[image_path]' alt='' class='product-img'>";
-        echo '<h2 class="product-title">' . $row['name'] . '</h2>';
-        echo '<span class="price">$' . $row['price'] . '</span>';
-        echo '<i class="bx bx-shopping-bag add-cart"></i>';
-        echo '</div>';
-      }
-    }
-
-    ?>
+                // Loop through each product and display it
+                if(mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="product-box">';
+                        echo "<img src='$row[image_path]' alt='' class='product-img'>";
+                        echo '<h2 class="product-title">' . $row['name'] . '</h2>';
+                        echo '<span class="price">$' . $row['price'] . '</span>';
+                        echo '<i class="bx bx-shopping-bag add-cart"></i>';
+                        echo '</div>';
+                    }
+                }
+            ?>
+            
+            <!-- Display some example products -->
             <div class="product-box">
                 <img src="img/product1.jpg" alt="" class="product-img">
                 <h2 class="product-title">SCHAFFHAUSEN</h2>

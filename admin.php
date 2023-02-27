@@ -35,11 +35,6 @@
 </head>
 <body>
 
-<style>
-
-  
-</style>
-
 
 
 <?php
