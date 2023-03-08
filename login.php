@@ -14,9 +14,9 @@
 </head>
 <body>
 <?php
-    include_once("header.php");
+include_once("header.php");
 
-    ?>
+?>
     <div class="container">
         <form action="includes/login.inc.php" method="post">
             <input type="text" name="uid" placeholder="Username/Email...">
@@ -25,11 +25,10 @@
         </form>
     </div>
     <?php
-    if (isset($_GET["error"])){
-        if($_GET["error"] == "eamptyinput"){
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "eamptyinput") {
             echo "<p>Fill in all fields</p>";
-        } 
-        else if ($_GET["error"] == "wronglogin"){
+        } else if ($_GET["error"] == "wronglogin") {
             echo "<p>Incorrect login info</p>";
         }
 

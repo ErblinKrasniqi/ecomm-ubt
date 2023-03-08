@@ -7,23 +7,23 @@
   </head>
   <body>
     <?php
-      include_once("header.php"); // include header file
+    include_once("header.php"); // include header file
     ?>
 
     <main class="container">
       <h2>About Us</h2>
       <?php
-        include_once './includes/dbh.inc.php'; // include database connection file
-
-        $sql = "SELECT * FROM products"; // query all products
-        $result = mysqli_query($conn, $sql); // execute query using database connection
-
-        if(mysqli_num_rows($result) > 0) { // check if there are any products
-          $row = mysqli_fetch_assoc($result); // get the first product from the result set
-          echo "<img class='imagec' src='$row[image_path]' alt='placeholder image'>"; // display the product image
-        } else {
-          echo '<p>No products found.</p>'; // display message if there are no products
-        }
+      include_once './includes/dbh.inc.php'; // include database connection file
+      
+      $sql = "SELECT * FROM products"; // query all products
+      $result = mysqli_query($conn, $sql); // execute query using database connection
+      
+      if (mysqli_num_rows($result) > 0) { // check if there are any products
+        $row = mysqli_fetch_assoc($result); // get the first product from the result set
+        echo "<img class='imagec' src='$row[image_path]' alt='placeholder image'>"; // display the product image
+      } else {
+        echo '<p>No products found.</p>'; // display message if there are no products
+      }
       ?>
 
       <p>Our Watches is a company that specializes in selling high-quality watches. We have a wide selection of watches that cater to different styles and preferences. Our watches are made with the finest materials and are designed to last for years.</p>
@@ -48,18 +48,18 @@
         <li><strong>The Luxury Collection:</strong> For those who want the ultimate in style and sophistication,</li>
       </ul>
       <?php
-include_once './includes/dbh.inc.php'; // include database connection file
-
-$sql = "SELECT * FROM products LIMIT 1,1"; // query the second product
-$result = mysqli_query($conn, $sql); // execute query using database connection
-
-if(mysqli_num_rows($result) > 0) { // check if there are any products
-  $row = mysqli_fetch_assoc($result); // get the second product from the result set
-  echo "<img class='imagec' src='$row[image_path]' alt='placeholder image'>"; // display the product image
-} else {
-  echo '<p>No products found.</p>'; // display message if there are no products
-}
-?>
+      include_once './includes/dbh.inc.php'; // include database connection file
+      
+      $sql = "SELECT * FROM products LIMIT 1,1"; // query the second product
+      $result = mysqli_query($conn, $sql); // execute query using database connection
+      
+      if (mysqli_num_rows($result) > 0) { // check if there are any products
+        $row = mysqli_fetch_assoc($result); // get the second product from the result set
+        echo "<img class='imagec' src='$row[image_path]' alt='placeholder image'>"; // display the product image
+      } else {
+        echo '<p>No products found.</p>'; // display message if there are no products
+      }
+      ?>
       </main>
     </body>
  </html>

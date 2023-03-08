@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start(); // start session to enable session variables
 ?>
 
@@ -12,7 +12,7 @@ session_start(); // start session to enable session variables
         // check if user is admin, display dashboard link if true
         if (isset($_SESSION["is_admin"])) {
             echo "<a class='logo' href='./admin.php'>Dashboard</a>";
-        } 
+        }
 
         // check if user is logged in, display links to pages if true
         if (isset($_SESSION["useruid"])) {
@@ -21,7 +21,7 @@ session_start(); // start session to enable session variables
             echo "<a class='logo' href='./comments.php'>Contact</a>";
             echo "<a class='logo' href='./profile.php'>Profile</a>";
             echo "<a class='logo' href='./includes/logout.inc.php'>Logout</a>";
-        } 
+        }
         // if user is not logged in, display links to login and sign up pages
         else {
             echo "<a class='logo' href='./aboutUs.php'>About us</a>";

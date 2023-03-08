@@ -1,13 +1,13 @@
-<?php 
-  include_once './includes/dbh.inc.php';
+<?php
+include_once './includes/dbh.inc.php';
 
-  // check if user clicked the delete button
-  if (isset($_POST['delete'])) {
-    $id = $_POST['delete'];
-    $sql = "DELETE FROM users WHERE usersId=$id";
-    mysqli_query($conn, $sql);
-    header("Refresh:0");
-  }
+// check if user clicked the delete button
+if (isset($_POST['delete'])) {
+  $id = $_POST['delete'];
+  $sql = "DELETE FROM users WHERE usersId=$id";
+  mysqli_query($conn, $sql);
+  header("Refresh:0");
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,11 +47,11 @@ if (isset($_POST['submit'])) {
   // Handle image upload
   $targetDir = "uploads/";
   $targetFile = $targetDir . basename($_FILES["image"]["name"]);
-  $imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
+  $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
   $uploadOk = 1;
-  if(isset($_POST["submit"])) {
+  if (isset($_POST["submit"])) {
     $check = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check !== false) {
+    if ($check !== false) {
       $uploadOk = 1;
     } else {
       echo "File is not an image.";
@@ -78,9 +78,9 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php
-    include_once("header.php");
+include_once("header.php");
 
-    ?>
+?>
     <table>
         <thead>
             <tr>
@@ -93,24 +93,24 @@ if (isset($_POST['submit'])) {
         </thead>
         <tbody>
             <?php
-                $sql = "SELECT * FROM users;";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-                if($resultCheck > 0){
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['usersId'] . "</td>";
-                        echo "<td>" . $row['usersUid'] . "</td>";
-                        echo "<td>" . $row['usersEmail'] . "</td>";
-                        echo "<td>" . $row['usersName'] . "</td>";
-                        echo "<td>
+            $sql = "SELECT * FROM users;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if ($resultCheck > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['usersId'] . "</td>";
+                echo "<td>" . $row['usersUid'] . "</td>";
+                echo "<td>" . $row['usersEmail'] . "</td>";
+                echo "<td>" . $row['usersName'] . "</td>";
+                echo "<td>
                                 <form method='POST' action=''>
                                     <button type='submit' name='delete' value='" . $row['usersId'] . "'>Delete</button>
                                 </form>
                               </td>";
-                        echo "</tr>";
-                    }
-                }
+                echo "</tr>";
+              }
+            }
 
 
             ?>
@@ -134,15 +134,15 @@ if (isset($_POST['submit'])) {
 
 <h2 class="comments">Contacts Section</h2>
   <?php
-   include_once './includes/dbh.inc.php';
+  include_once './includes/dbh.inc.php';
 
-   $sql = "SELECT * FROM comments";
-   $result = mysqli_query($conn, $sql);
+  $sql = "SELECT * FROM comments";
+  $result = mysqli_query($conn, $sql);
 
 
   // Display the comments on the web page
   if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
 
       echo "<div class='comments'>";
       echo "<h3>" . $row["name"] . " <small>(" . $row["email"] . ")</small></h3>";

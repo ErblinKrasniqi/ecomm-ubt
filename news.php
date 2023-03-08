@@ -24,8 +24,8 @@
 	$result = mysqli_query($conn, $sql);
 
 	// If there are any products in the database, loop through and display them
-	if(mysqli_num_rows($result) > 0) {
-		while($row = mysqli_fetch_assoc($result)) {
+	if (mysqli_num_rows($result) > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
 			// Display product name, image and description
 			echo "<h1>$row[name]</h1>";
 			echo "<p>Lorem ipsum dolor sit amet, $row[name] adipiscing elit. Fusce euismod magna sit $row[name] amet purus gravida tempor. Nullam $row[name] at metus vitae est imperdiet varius. Praesent vel felis non metus bibendum interdum. In vel lacinia magna. Suspendisse potenti. Sed vel tellus et arcu dictum lacinia. Donec euismod pretium ex, ut lobortis mi.</p>";

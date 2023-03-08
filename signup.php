@@ -12,9 +12,9 @@
 </head>
 <body>
 <?php
-    include_once("header.php");
+include_once("header.php");
 
-    ?>
+?>
     
     <div class="container">
         <form action="./includes/signup.inc.php" method="post">
@@ -28,26 +28,20 @@
     </div>
 
     <?php
-    if (isset($_GET["error"])){
-        if($_GET["error"] == "eamptyinput"){
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "eamptyinput") {
             echo "<p>Fill in all fields</p>";
-        } 
-        else if ($_GET["error"] == "invalidUid"){
+        } else if ($_GET["error"] == "invalidUid") {
             echo "<p>Chose a proper username</p>";
-        }
-        else if ($_GET["error"] == "invalidemail"){
+        } else if ($_GET["error"] == "invalidemail") {
             echo "<p>Chose a proper email</p>";
-        }
-        else if ($_GET["error"] == "passwordsdontmatch"){
+        } else if ($_GET["error"] == "passwordsdontmatch") {
             echo "<p>Passwords dont match</p>";
-        }
-        else if ($_GET["error"] == "stmtfailed"){
+        } else if ($_GET["error"] == "stmtfailed") {
             echo "<p>Somthing went wrong try again</p>";
-        }
-        else if ($_GET["error"] == "usernametaken"){
+        } else if ($_GET["error"] == "usernametaken") {
             echo "<p>Username already taken</p>";
-        }
-        else if ($_GET["error"] == "none"){
+        } else if ($_GET["error"] == "none") {
             echo "<p>You have signd up</p>";
         }
     }
